@@ -1,6 +1,6 @@
 # Template Web Project
 
-Template pour demarrer rapidement un projet web avec Docker + Node.js + Fastify + TypeScript.
+Template pour demarrer rapidement un projet web avec Docker + Node.js + Fastify + TypeScript + EJS.
 
 ## Structure
 
@@ -15,10 +15,13 @@ Template pour demarrer rapidement un projet web avec Docker + Node.js + Fastify 
     └── srcs/
         ├── backend/
         │   ├── main.ts           # Point d'entree
-        │   ├── config/fastify.ts # Config serveur
+        │   ├── config/fastify.ts # Config serveur (EJS + static)
         │   ├── routes/           # Routes API
         │   └── utils/logger.ts   # Logger couleurs
-        └── static/               # Fichiers statiques (HTML, CSS, JS)
+        └── static/
+            ├── views/            # Templates EJS
+            ├── css/              # Styles
+            └── js/               # Scripts
 ```
 
 ## Commandes

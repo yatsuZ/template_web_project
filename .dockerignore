@@ -1,0 +1,31 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# Build
+dist
+*.tsbuildinfo
+
+# Env (le .env est passé via docker-compose)
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+.devcontainer
+
+# Docs
+README.md
+documentation
