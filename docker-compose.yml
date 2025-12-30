@@ -1,0 +1,27 @@
+services:
+  app:
+    container_name: app_container
+    build:
+      context: .
+      dockerfile: Docker/node/Dockerfile
+    ports:
+      - "${PORT:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=${PORT:-3000}
+    command: sh -c "npm install && npm run build && npm run dev"
+    volumes:
+      - ./code:/app
+      - node_modules_cache:/app/node_modules
+    networks:
+      - app_network
+    restart: unless-stopped
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  node_modules_cache:
